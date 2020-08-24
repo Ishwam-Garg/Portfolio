@@ -1,7 +1,8 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 void main() {
   runApp(MaterialApp(
@@ -21,8 +22,9 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
+class _HomeState extends State<Home>{
 
+  /*
   AnimationController _pageAnimationController;  // for page animation
   Animation<double> _pageAnimation;              // for page animation
 
@@ -45,14 +47,26 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
       });
     });
   }
+*/ // animation code not used
+
+   _launch_url(url) async
+  {
+    if (await canLaunch(url))
+      {
+        await launch(url);
+      }
+    else{
+      throw "Cannot launch the URL $url";
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       body: new SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
@@ -69,7 +83,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
             new Container(
               alignment: Alignment.center,
               padding: const EdgeInsets.only(top:30.0,left: 30.0,right: 30.0),
-            child: Text("Growing to become a Developer!",style: new TextStyle(
+              child: Text("Growing to become a Developer!",style: new TextStyle(
               decoration: TextDecoration.underline,
               fontSize: 20.0,
               color: Colors.white,
@@ -90,7 +104,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
                         fontWeight: FontWeight.bold,
                         color: Color(0xff187bcd), //blue Color
                       ),),
-                    ),
+                    ),//Name
                     new Container(
                       padding: const EdgeInsets.only(top:0.0,left: 10,right: 10,bottom: 10),
                       alignment: Alignment.topLeft,
@@ -99,7 +113,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
                         fontWeight: FontWeight.bold,
                         color: Color(0xff187bcd), //blue Color
                       ),),
-                    ),
+                    ),//Last name
                      new Container(
                       alignment: Alignment.center,
                       padding: const EdgeInsets.only(top:0.0,left: 15.0,right: 15.0,bottom:15),
@@ -109,7 +123,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
                         color: Colors.white,
                       ),),
                     ), // description
-
                       new Container(
                       alignment: Alignment.center,
                       padding: const EdgeInsets.only(top:10.0,bottom: 10.0,left: 5,right: 5),
@@ -145,7 +158,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
                     Icon(Icons.location_on,color: Colors.white70,size: 30,),
                     Text(" India ",style: TextStyle(color: Colors.white,fontSize: 20,),),
                   ]),
-                  ),
+                  ),//country
                 new Container(
                   alignment: Alignment.center,
                   padding: const EdgeInsets.only(top:10.0,bottom: 10.0,left: 5,right: 5),
@@ -154,7 +167,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
                     Icon(Icons.access_time,color: Colors.white70,size: 30,),
                     Text(" 5pm to 11pm ",style: TextStyle(color: Colors.white,fontSize: 20,),),
                   ]),
-                ),
+                ),//timing
                     new Container(
                       padding: const EdgeInsets.only(top:0.0,left: 10,right: 10,bottom: 10),
                       alignment: Alignment.topLeft,
@@ -238,6 +251,47 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
                         color: Colors.white,
                       ),),
                     ),
+                    new Container(
+                      alignment: Alignment.centerLeft,
+                      padding: const EdgeInsets.only(top:0.0,left: 15.0,right: 15.0,bottom:15),
+                      child: new Text(" Follow Me: ", style: new TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.indigo,
+                      ),),
+                    ),//Social Intro
+                    new Container(
+                      alignment: Alignment.centerLeft,
+                      padding: const EdgeInsets.only(top:10.0,left: 5.0,right: 5.0,bottom:10.0),
+                      child: new Column(
+                        children: <Widget>[
+                          new Row(
+                            children: <Widget>[
+                        new RaisedButton(
+                          onPressed: () {
+                            _launch_url('https://www.facebook.com/profile.php?id=100008333706851');
+                          },child: new Text("Facebook"),
+                        ),
+                          new RaisedButton(
+                          onPressed: (){_launch_url('https://www.instagram.com/ishwamgarg/?hl=en');},
+                          color: Colors.pink,
+                          child: new Text("Instagram"),
+                          ),
+                          new RaisedButton(
+                          onPressed: (){_launch_url('https://github.com/Ishwam-Garg');},
+                          color: Colors.white,
+                            child: new Text("Github",style: new TextStyle(
+                          color: Colors.black,
+                          ),),
+                          ),],),
+                          new RaisedButton(
+                            onPressed: (){_launch_url('https://www.thebtechian.com/');},
+                              color: Colors.green,
+                              child: new Text("My Blog",style: new TextStyle(
+                            color: Colors.white,
+                      ),),
+                    ),
+                  ],),),
                 ],)
     ), // container
                 ],
