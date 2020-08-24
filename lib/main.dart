@@ -56,22 +56,23 @@ class _HomeState extends State<Home> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     new Container(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.only(top:0.0,left: 10,right: 10,bottom: 0),
+                      alignment: Alignment.topLeft,
                       child: new Text("ISHWAM",style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 60,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xff03254c), //blue Color
+                        color: Color(0xff187bcd), //blue Color
                       ),),
-                    )
+                    ),
                     new Container(
-                      alignment: Alignment.center,
-                      padding: const EdgeInsets.only(top:10.0,bottom: 10.0,left: 5,right: 5),
-                      child:
-                      Row(children: <Widget>[
-                        Icon(Icons.school,color: Colors.white,size: 30,),
-                        Text(" AKGEC GHAZIABAD ",style: TextStyle(color: Colors.white,fontSize: 20,),),
-                      ]),
-                    ), //College
+                      padding: const EdgeInsets.only(top:0.0,left: 10,right: 10,bottom: 10),
+                      alignment: Alignment.topLeft,
+                      child: new Text("GARG",style: TextStyle(
+                        fontSize: 60,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff187bcd), //blue Color
+                      ),),
+                    ),
                     new Container(
                       alignment: Alignment.center,
                       padding: const EdgeInsets.only(top:0.0,left: 15.0,right: 15.0,bottom:15),
@@ -80,7 +81,16 @@ class _HomeState extends State<Home> {
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
                       ),),
-                    ), // description // Container
+                    ),
+                    new Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.only(top:10.0,bottom: 10.0,left: 5,right: 5),
+                      child:
+                      Row(children: <Widget>[
+                        Icon(Icons.school,color: Colors.white,size: 30,),
+                        Text(" AKGEC GHAZIABAD ",style: TextStyle(color: Colors.white,fontSize: 20,),),
+                      ]),
+                    ), //Colleg
                   new Container(
                     alignment: Alignment.center,
                     padding: const EdgeInsets.only(top:10.0,bottom: 10.0,left: 5,right: 5),
@@ -117,6 +127,15 @@ class _HomeState extends State<Home> {
                     Text(" 5pm to 11pm ",style: TextStyle(color: Colors.white,fontSize: 20,),),
                   ]),
                 ),
+                    new Container(
+                      padding: const EdgeInsets.only(top:0.0,left: 10,right: 10,bottom: 10),
+                      alignment: Alignment.topLeft,
+                      child: new Text("SOCIAL",style: TextStyle(
+                        fontSize: 60,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff187bcd), //blue Color
+                      ),),
+                    ),
                 ],)
     ), // container
                 ],
