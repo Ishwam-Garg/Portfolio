@@ -117,7 +117,7 @@ class _HomeState extends State<Home>{
                      new Container(
                       alignment: Alignment.center,
                       padding: const EdgeInsets.only(top:0.0,left: 15.0,right: 15.0,bottom:15),
-                      child: new Text("I am a 2nd year CSE Student. I have passed my 12th in PCM with 92% in year 2020 from DPSG MEERUT ROAD.", style: new TextStyle(
+                      child: new Text("I am a 2nd year CSE Student.\nI have passed my 12th in PCM with 92% in year 2020 from\nDPSG MEERUT ROAD.", style: new TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
@@ -245,7 +245,7 @@ class _HomeState extends State<Home>{
                     new Container(
                       alignment: Alignment.center,
                       padding: const EdgeInsets.only(top:0.0,left: 15.0,right: 15.0,bottom:15),
-                      child: new Text("I Am Available On Instagram,Facebook,Github. Usernames are Below: ", style: new TextStyle(
+                      child: new Text("I Am Available On\nInstagram,Facebook,Github.\nLinks are Below: ", style: new TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
@@ -262,31 +262,38 @@ class _HomeState extends State<Home>{
                     ),//Social Intro
                     new Container(
                       alignment: Alignment.centerLeft,
-                      padding: const EdgeInsets.only(top:10.0,left: 5.0,right: 5.0,bottom:10.0),
+                      padding: const EdgeInsets.only(top:10.0,left: 15.0,right: 15.0,bottom:20.0),
                       child: new Column(
                         children: <Widget>[
                           new Row(
                             children: <Widget>[
-                        new RaisedButton(
-                          onPressed: () {
-                            _launch_url('https://www.facebook.com/profile.php?id=100008333706851');
-                          },child: new Text("Facebook"),
+                            new RaisedButton(
+                          onPressed: () {_launch_url('https://www.facebook.com/profile.php?id=100008333706851');}
+                          ,child: new Text("Facebook"),
+                           padding: const EdgeInsets.all(5.0),
+                           hoverColor: Colors.blueAccent,
                         ),
                           new RaisedButton(
                           onPressed: (){_launch_url('https://www.instagram.com/ishwamgarg/?hl=en');},
                           color: Colors.pink,
+                            hoverColor: Colors.pinkAccent,
+                            padding: const EdgeInsets.all(5.0),
                           child: new Text("Instagram"),
                           ),
                           new RaisedButton(
                           onPressed: (){_launch_url('https://github.com/Ishwam-Garg');},
                           color: Colors.white,
+                            hoverColor: Colors.white70,
+                            padding: const EdgeInsets.all(5.0),
                             child: new Text("Github",style: new TextStyle(
                           color: Colors.black,
                           ),),
                           ),],),
                           new RaisedButton(
                             onPressed: (){_launch_url('https://www.thebtechian.com/');},
-                              color: Colors.green,
+                            padding: const EdgeInsets.all(5.0),
+                            color: Colors.green,
+                            hoverColor: Colors.greenAccent,
                               child: new Text("My Blog",style: new TextStyle(
                             color: Colors.white,
                       ),),
