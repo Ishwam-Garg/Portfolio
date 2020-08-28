@@ -266,19 +266,20 @@ class _HomeState extends State<Home>{
                       child: new Column(
                         children: <Widget>[
                           new Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
                             new RaisedButton(
-                          onPressed: () {_launch_url('https://www.facebook.com/profile.php?id=100008333706851');}
-                          ,child: new Text("Facebook"),
+                              onPressed: () {_launch_url('https://www.facebook.com/profile.php?id=100008333706851');}
+                              ,child: new Text("Facebook"),
                            padding: const EdgeInsets.all(5.0),
                            hoverColor: Colors.blueAccent,
                         ),
-                          new RaisedButton(
-                          onPressed: (){_launch_url('https://www.instagram.com/ishwamgarg/?hl=en');},
-                          color: Colors.pink,
-                            hoverColor: Colors.pinkAccent,
-                            padding: const EdgeInsets.all(5.0),
-                          child: new Text("Instagram"),
+                              new RaisedButton(
+                                onPressed: (){_launch_url('https://www.instagram.com/ishwamgarg/?hl=en');},
+                                color: Colors.pink,
+                                hoverColor: Colors.pinkAccent,
+                                padding: const EdgeInsets.all(5.0),
+                                child: new Text("Instagram"),
                           ),
                           new RaisedButton(
                           onPressed: (){_launch_url('https://github.com/Ishwam-Garg');},
